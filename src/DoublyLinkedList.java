@@ -29,7 +29,7 @@ public class DoublyLinkedList {
     // method used to remove elements from doubly linked list
     public void remove(int value){
         Node cur = head.next;
-        if(cur.next == tail) {
+        if(head.next == tail) {
             System.out.println("No element to remove.");
             return;
         }
@@ -40,7 +40,7 @@ public class DoublyLinkedList {
                 cur.prev.next = cur.next;
                 cur.next = null;
                 cur.prev = null;
-                break;
+                return;
             }
             cur = cur.next;
         }
